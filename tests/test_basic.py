@@ -31,7 +31,7 @@ def test_options_work(app, client):
         return "Hello World"
 
     rv = client.open("/", method="OPTIONS")
-    assert sorted(rv.allow) == ["GET", "HEAD", "OPTIONS", "POST"]
+    assert sorted(rv.allow) == ["HEAD", "GET", "OPTIONS", "POST"]
     assert rv.data == b""
 
 
